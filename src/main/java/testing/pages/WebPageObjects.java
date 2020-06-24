@@ -1,12 +1,12 @@
 package testing.pages;
 
-import core.Global;
+import core.Global_VARS;
 import org.openqa.selenium.By;
 
 /**WebPageObject class
  * @author smlungwana
  * */
-public class WebPageObjects extends Global {
+public class WebPageObjects extends Global_VARS {
 
     public static String link() {
         return URL;
@@ -57,7 +57,11 @@ public class WebPageObjects extends Global {
     }
 
     public static By selectRoleDropdown() {
-        return By.xpath("//select[@name='RoleId']");
+        return By.name("RoleId");
+    }
+
+    public static By tableDataCells() {
+        return By.xpath("//td[@class='smart-table-data-cell']");
     }
 
 

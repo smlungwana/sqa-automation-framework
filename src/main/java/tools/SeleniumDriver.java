@@ -1,6 +1,5 @@
 package tools;
 
-import core.Global.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 
-import static core.Global.*;
+import static core.Global_VARS.*;
 
 /**Selenium  Singleton class
  * @author smlungwana
@@ -92,7 +91,8 @@ public class SeleniumDriver {
     /**closeDriver method quits the current driver*/
     public void closeDriver() {
         try {
-            getCurrentDriver().quit();
+            getCurrentDriver().close();
+
         }
         catch(Exception e) {
             System.out.println(e.getMessage());

@@ -4,9 +4,9 @@ import tools.SeleniumBrowserUtility;
 
 /**
  @author smlungwana
- Global Utility Class
+ Utility class Global varibales
  */
-public class Global {
+public class Global_VARS {
 
     public static SeleniumBrowserUtility seleniumBrowser;
     public static final String URL = "http://www.way2automation.com/angularjs-protractor/webtables/";

@@ -6,7 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import core.Global;
+import core.Global_VARS;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -15,7 +15,7 @@ import java.util.Date;
 /**Reporting class
  * @author smlungwana
  * */
-public class Reporting extends Global {
+public class Reporting extends Global_VARS {
 
     private static ExtentReports report = null;
     private static ExtentTest currentTest;
@@ -79,14 +79,22 @@ public class Reporting extends Global {
         }
     }
 
-    public static void logDebug(String debug) {
+    public static void logInfo(String info) {
         try {
-            writeToLogFile("- [DEBUG] " + debug);
+            writeToLogFile("- [INFO] " + info);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void logError(String error) {
+        try {
+            writeToLogFile("- [EROR] " + error);
         }
         catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
     public static void logFailure(String failure) {

@@ -1,16 +1,24 @@
 package testing.pages;
 
-import core.Global;
+import core.Global_VARS;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import tools.SeleniumDriver;
 import tools.TestDataReader;
 import tools.Reporting;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-public class WebPageTest extends Global {
+/**@author smlungwana
+ **/
+public class WebTest extends Global_VARS {
 
-    public static String webAssessmentTest() {
+    /***/
+    public static String validateTest() {
         Map<String,String> testData;
-        String a =  "debug";
 
         if(isJSON_Test) {
            testData = TestDataReader.getJSON_Data();
@@ -34,6 +42,16 @@ public class WebPageTest extends Global {
 
         if(!seleniumBrowser.waitFor(WebPageObjects.addUserButton()))  {
             return Reporting.testFailed("Failed to wait for 'Add User' button.");
+        }
+
+        //Retrieve all data from table and check for unique username
+        List<String> tableData = seleniumBrowser.extractValues(WebPageObjects.tableDataCells());
+
+        for(int i = 2;i < tableData.size();i = i+10) { //
+            String user = tableData.get(i);
+            if(user.equals(username)) { //Username is already on list
+                return Reporting.testFailed("\""+username+"\" is not unique. Please update test data with a different username.");
+            }
         }
 
         Reporting.stepPassedWithScreenshot("Successfully navigated to 'User List Table'.");
@@ -62,7 +80,6 @@ public class WebPageTest extends Global {
             return Reporting.testFailed("Failed to enter text on 'Password' field.");
         }
 
-
         if(customer.contains("AAA")) {
             if (!seleniumBrowser.click(WebPageObjects.companyAAARadioButton())) {
                 return Reporting.testFailed("Failed to click 'Company AAA' button.");
@@ -74,9 +91,9 @@ public class WebPageTest extends Global {
             }
         }
 
-//        if(!seleniumBrowser.selectByValue(WebPageObjects.selectRoleDropdown(),"Customer"))  {
-//            return Reporting.testFailed("Failed to wait for 'Role' option to be clickable.");
-//        }TODO
+        if(!seleniumBrowser.selectByText(WebPageObjects.selectRoleDropdown(),role)) {
+            return Reporting.testFailed("Failed to select "+role+".");
+        }
 
         if(!seleniumBrowser.enterText(email,WebPageObjects.emailInput())) {
             return Reporting.testFailed("Failed to enter text on 'Last Name' field.");
@@ -84,6 +101,33 @@ public class WebPageTest extends Global {
 
         if(!seleniumBrowser.enterText(cell,WebPageObjects.mobileInput())) {
             return Reporting.testFailed("Failed to enter text on 'Mobile' field.");
+        }
+
+        //Validate if all data is entered by waiting for Save button to be clickable
+        if(!seleniumBrowser.waitForClickable(WebPageObjects.saveButton(),5)) {
+            return Reporting.testFailed("Failed to wait for 'Save' button to be clickable.");
+        }
+
+        Reporting.stepPassedWithScreenshot("Successfully entered user details.");
+
+        if(!seleniumBrowser.click(WebPageObjects.saveButton()))  {
+            return Reporting.testFailed("Failed to click 'Save' button.");
+        }
+
+        //Retrieve all data from table and check if user is added to table
+        List<String> tableResults = seleniumBrowser.extractValues(WebPageObjects.tableDataCells());
+        List<String> usersOnListTable = new ArrayList<String>();
+
+        for(int i = 2;i < tableResults.size();i = i+10) { //
+            String user = tableResults.get(i);
+            usersOnListTable.add(user);
+        }
+
+        if(usersOnListTable.contains(username)) {
+            Reporting.stepPassedWithScreenshot("Successfully added \"" + username + "\" to 'User List Table'.");
+        }
+        else {
+            return Reporting.testFailed("Failed to add \""+username+"\" to 'User List Table.'");
         }
 
         return null;
