@@ -1,7 +1,9 @@
 import core.Global;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import testing.pages.WebPageTest;
+import tools.Reporting;
 import tools.SeleniumDriver;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 /**WebSuite class
  * @author smlungwana
  * */
-public class WebSuite extends Global{
+public class WebSuite {
+
 
     @BeforeAll
     public static void init() {
+        Reporting.reportName = "Web Assessment";
+        Reporting.init();
+    }
+
+    @BeforeEach
+    public void setup() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
-        driver.setBrowser(CHROME);
+        driver.setBrowser(Global.CHROME);
     }
 
     @AfterAll
@@ -23,8 +32,18 @@ public class WebSuite extends Global{
         SeleniumDriver driver = SeleniumDriver.getInstance();
         driver.closeDriver();
     }
+
     @Test
     public void webAssessmentTestCase() {
-        assertNull(WebPageTest.testWebPage(),"Test Failed!");
+        Global.isJSON_Test = true;
+        Reporting.createTest("JSON Data - webTest case");
+        assertNull(WebPageTest.webAssessmentTest(),"Test Failed!");
+    }
+
+    @Test
+    public void webAssessmentTestCase2() {
+        Global.isJSON_Test = false;
+        Reporting.createTest("CSV Data - webTest case 2");
+        assertNull(WebPageTest.webAssessmentTest(),"Test Failed!");
     }
 }

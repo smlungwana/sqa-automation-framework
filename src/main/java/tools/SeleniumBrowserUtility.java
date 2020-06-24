@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -17,10 +18,12 @@ public class SeleniumBrowserUtility {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
             driver.navigate().to(url);
+            Reporting.logPass("Navigated to "+url);
             return true;
         }
         catch(Exception e) {
-            //TODO Report exception
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -31,10 +34,12 @@ public class SeleniumBrowserUtility {
 
             exists.until(ExpectedConditions.refreshed(
                     ExpectedConditions.visibilityOfElementLocated(selector)));
+            Reporting.logDebug("Successfully located element "+selector.toString());
             return true;
         }
         catch(Exception e) {
-            //TODO Log Error
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -45,10 +50,12 @@ public class SeleniumBrowserUtility {
 
             exists.until(ExpectedConditions.refreshed(
                     ExpectedConditions.visibilityOfElementLocated(selector)));
+            Reporting.logDebug("Successfully located element "+selector.toString());
             return true;
         }
         catch(Exception e) {
-            //TODO Log Error
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -62,6 +69,8 @@ public class SeleniumBrowserUtility {
             return true;
         }
         catch(Exception e) {
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -73,14 +82,15 @@ public class SeleniumBrowserUtility {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].value='"	+	text	+	"';",	element);
+            Reporting.logDebug("Successfully entered \""+text+"\" on "+selector.toString());
             return true;
         }
         catch (Exception e) {
-            //TODO
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
-
 
     public static boolean click(By selector) {
         try {
@@ -89,12 +99,31 @@ public class SeleniumBrowserUtility {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();",element);
+            Reporting.logDebug("Successfully clicked "+selector.toString());
 
             return true;
-
         }
         catch(Exception e) {
-            //TODO Log Error
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public  boolean selectByValue(By selector, String value) {
+        try {
+            WebDriver driver = SeleniumDriver.getInstance().getDriver();
+            WebElement element = driver.findElement(selector);
+            Select selectElement = new Select(element);
+            selectElement.selectByValue(value);
+
+            Reporting.logDebug("Successfully selected \""+value+"\" on "+selector.toString());
+
+            return true;
+        }
+        catch(Exception e) {
+            Reporting.logFailure(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }

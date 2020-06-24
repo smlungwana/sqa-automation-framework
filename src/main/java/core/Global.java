@@ -13,4 +13,10 @@ public class Global {
     public static final int CHROME = 0;
     public static final int FIREFOX = 1;
 
+    //Global variables for Report
+    public static String reportDirectory = System.getProperty("user.dir") + "\\Reports\\";
+    public static int screenshotCounter;
+    public static String executionTime = "";
+    public static boolean isJSON_Test;
+
 }
