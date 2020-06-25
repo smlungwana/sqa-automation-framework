@@ -66,7 +66,7 @@ public class SeleniumDriver {
         StringBuilder relativePathBuilder = new StringBuilder();
         try
         {
-            imagePathBuilder.append(reportDirectory);
+            imagePathBuilder.append(reportDirectory+"\\");
             relativePathBuilder.append("Screenshots\\");
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");

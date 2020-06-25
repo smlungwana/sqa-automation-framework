@@ -3,31 +3,36 @@ package tools;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.io.Files;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestDataReader {
 
 
-    private static String path = System.getProperty("user.dir")+"\\data";
     private static String jsonFile = "JSON_Data.json";
     private static String csvFile = "CSV_Data.csv";
+    private static String directory =  System.getProperty("user.dir");
 
     public static Map<String,String> getJSON_Data() {
-        String path = System.getProperty("user.dir")+"\\data";
 
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> map = null;
 
         // Read JSON from a file into a Map
         try {
+            //Platform independent path
+            Path jsonPath = Paths.get( directory,"data",jsonFile);
+
             map = mapper.readValue(new File(
-                    path + "\\" + jsonFile), new TypeReference<Map<String, Object>>() {
+                    jsonPath.toString() ), new TypeReference<Map<String, Object>>() {
             });
 
         } catch (Exception e) {
@@ -40,7 +45,10 @@ public class TestDataReader {
         String line = "";
         String cvsSplitBy = ",";
         HashMap<String, String> list = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path + "\\"+csvFile))) {
+
+        Path csvPath = Paths.get( directory,"data",csvFile);
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvPath.toString()))) {
 
             while ((line = br.readLine()) != null) {
 

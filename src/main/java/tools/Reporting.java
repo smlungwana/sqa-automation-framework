@@ -9,6 +9,8 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import core.Global_VARS;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,10 +27,20 @@ public class Reporting extends Global_VARS {
 
     public static void init() {
         report = new ExtentReports();
-        reportDirectory =  reportDirectory +"\\"+reportName+"\\"+ "_" +getCurrentTime()+"\\";
+       // reportDirectory =  reportDirectory +"\\"+reportName+"\\"+ "_" +getCurrentTime()+"\\";
+
+        Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
+
+        reportDirectory = reportDirectoryPath.toString();
+
         new File(reportDirectory).mkdirs();
-        logFile = reportDirectory + "log.txt";
-        ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(reportDirectory + "ExtentReport.html");
+
+        Path logPath = Paths.get(reportDirectory,"log.txt");
+
+        logFile = logPath.toString();
+
+        Path path = Paths.get(reportDirectory,"ExtentReport.html");
+        ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(path.toString());
         report.attachReporter(htmlReport);
         report.setAnalysisStrategy(AnalysisStrategy.TEST);
     }
