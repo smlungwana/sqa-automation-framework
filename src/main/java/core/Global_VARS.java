@@ -4,7 +4,7 @@ import tools.SeleniumBrowserUtility;
 
 /**
  @author smlungwana
- Utility class Global varibales
+ Utility class Global variables
  */
 public class Global_VARS {
 
