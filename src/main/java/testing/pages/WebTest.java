@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**WebTest class
+/**WebTest class for automating browser elements
  * @author smlungwana
  **/
 public class WebTest extends Global_VARS {
