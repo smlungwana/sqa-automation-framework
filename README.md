@@ -4,7 +4,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Bugs](#bugs)
-* [Author](*bugs)
+* [Author](#author)
 
 
 ## General info
