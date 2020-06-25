@@ -13,7 +13,7 @@ This automation project navigates to [User List Table](http://www.way2automation
 ## Technologies
 Project was created using:
 * Java version: 8
-* InjelliJ IDEA 2019.3
+* IntelliJ IDEA 2019.3
 * Selenium 3.141.59
 * Maven version: 3.6.3
 * JUnit version 5.6
