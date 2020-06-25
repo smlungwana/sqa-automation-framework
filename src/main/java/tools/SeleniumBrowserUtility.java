@@ -4,21 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import testing.pages.WebPageObjects;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-/**SeleniumBrowserUtility class
+/**SeleniumBrowserUtility class for interacting with browser elements.
  * @author smlungwana
  * */
 public class SeleniumBrowserUtility {
 
+    /**navigateToURL method to navigate browser to specified URL.
+     * 	@throws	Exception
+     */
     public static boolean navigateToURL(String url) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -32,6 +33,10 @@ public class SeleniumBrowserUtility {
             return false;
         }
     }
+
+    /**waitFor method to wait for element to be visible. Takes an integer as timeout.
+     * 	@throws	Exception
+     */
     public static boolean waitFor(By selector,int timeout) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -48,6 +53,10 @@ public class SeleniumBrowserUtility {
             return false;
         }
     }
+
+    /**waitFor method to wait for element to be visible.
+     * 	@throws	Exception
+     */
     public static boolean waitFor(By selector) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -64,7 +73,9 @@ public class SeleniumBrowserUtility {
             return false;
         }
     }
-
+    /**enterText method to enter text on text input field.
+     * 	@throws	Exception
+     */
     public static boolean enterText(String text, By selector) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -82,6 +93,9 @@ public class SeleniumBrowserUtility {
         }
     }
 
+    /**waitForClickable	method to wait for element to be clickable.
+     * 	@throws	Exception
+     */
     public static boolean waitForClickable(By selector, int timeout) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -98,6 +112,9 @@ public class SeleniumBrowserUtility {
         }
     }
 
+    /**click method to click an element e.g 'button'.
+     * 	@throws	Exception
+     */
     public static boolean click(By selector) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -116,6 +133,9 @@ public class SeleniumBrowserUtility {
         }
     }
 
+    /**selectByText method to select value from dropdown.
+     * 	@throws	Exception
+     */
     public static boolean selectByText(By selector, String value) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -133,6 +153,9 @@ public class SeleniumBrowserUtility {
         }
     }
 
+    /**extractValues method to extracts elements from the DOM structure.
+     * 	@throws	Exception
+     */
     public static List<String> extractValues(By selector) {
         List<String> valueList = new ArrayList<>();
         try {

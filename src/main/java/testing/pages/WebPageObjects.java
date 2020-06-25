@@ -3,14 +3,10 @@ package testing.pages;
 import core.Global_VARS;
 import org.openqa.selenium.By;
 
-/**WebPageObject class
+/**WebPageObject class that stores the Web page XPaths
  * @author smlungwana
  * */
 public class WebPageObjects extends Global_VARS {
-
-    public static String link() {
-        return URL;
-    }
 
     public static By addUserButton() {
         return By.xpath("//button[contains(text(),'Add User')]");

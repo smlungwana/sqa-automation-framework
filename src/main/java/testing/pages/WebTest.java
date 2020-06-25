@@ -1,10 +1,6 @@
 package testing.pages;
 
 import core.Global_VARS;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import tools.SeleniumDriver;
 import tools.TestDataReader;
 import tools.Reporting;
 
@@ -12,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**@author smlungwana
+/**WebTest class
+ * @author smlungwana
  **/
 public class WebTest extends Global_VARS {
 
-    /***/
+    /**validateTest method to validate the elements on browser*/
     public static String validateTest() {
         Map<String,String> testData;
 
@@ -26,7 +23,7 @@ public class WebTest extends Global_VARS {
         else { //CSV Test
            testData = TestDataReader.getCSV_Data();
         }
-
+        //Get test data from Map object
         String firstName = testData.get("FirstName");
         String lastName = testData.get("LastName");
         String username =  testData.get("Username");
@@ -65,19 +62,19 @@ public class WebTest extends Global_VARS {
         }
 
         if(!seleniumBrowser.enterText(firstName,WebPageObjects.firstNameInput())) {
-            return Reporting.testFailed("Failed to enter text on 'First Name' field.");
+            return Reporting.testFailed("Failed to enter text on 'First Name' input field.");
         }
 
         if(!seleniumBrowser.enterText(lastName,WebPageObjects.lastNameInput())) {
-            return Reporting.testFailed("Failed to enter text on 'Last Name' field.");
+            return Reporting.testFailed("Failed to enter text on 'Last Name' input field.");
         }
 
         if(!seleniumBrowser.enterText(username,WebPageObjects.userNameInput())) {
-            return Reporting.testFailed("Failed to enter text on 'User Name' field.");
+            return Reporting.testFailed("Failed to enter text on 'User Name' input field.");
         }
 
         if(!seleniumBrowser.enterText(password,WebPageObjects.passwordInput())) {
-            return Reporting.testFailed("Failed to enter text on 'Password' field.");
+            return Reporting.testFailed("Failed to enter text on 'Password' input field.");
         }
 
         if(customer.contains("AAA")) {
@@ -96,11 +93,11 @@ public class WebTest extends Global_VARS {
         }
 
         if(!seleniumBrowser.enterText(email,WebPageObjects.emailInput())) {
-            return Reporting.testFailed("Failed to enter text on 'Last Name' field.");
+            return Reporting.testFailed("Failed to enter text on 'Email' input field.");
         }
 
         if(!seleniumBrowser.enterText(cell,WebPageObjects.mobileInput())) {
-            return Reporting.testFailed("Failed to enter text on 'Mobile' field.");
+            return Reporting.testFailed("Failed to enter text on 'Mobile' input field.");
         }
 
         //Validate if all data is entered by waiting for Save button to be clickable

@@ -1,9 +1,7 @@
 package tools;
 
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.io.Files;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,6 +12,10 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+/**TestDataReader class that reads JSON and CSV files stored inside data/ folder
+ * @author smlungwana
+ **/
+
 public class TestDataReader {
 
 
@@ -21,8 +23,10 @@ public class TestDataReader {
     private static String csvFile = "CSV_Data.csv";
     private static String directory =  System.getProperty("user.dir");
 
+    /**getJSON_Data method to get JSON test data.
+     * 	@throws	Exception
+     */
     public static Map<String,String> getJSON_Data() {
-
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> map = null;
 
@@ -40,8 +44,11 @@ public class TestDataReader {
         }
         return map;
     }
-    public static Map<String,String> getCSV_Data() {
 
+    /**getCSV_Data method to get CSV test data.
+     * 	@throws	Exception
+     */
+    public static Map<String,String> getCSV_Data() {
         String line = "";
         String cvsSplitBy = ",";
         HashMap<String, String> list = new HashMap<>();

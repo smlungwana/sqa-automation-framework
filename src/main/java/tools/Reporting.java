@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**Reporting class
+/**Reporting class for building the HTML Report
  * @author smlungwana
  * */
 public class Reporting extends Global_VARS {
@@ -25,9 +25,9 @@ public class Reporting extends Global_VARS {
     public static String latestScreenshotAbs;
     private static String logFile;
 
+    /**Initialise reports and create sub folders*/
     public static void init() {
         report = new ExtentReports();
-       // reportDirectory =  reportDirectory +"\\"+reportName+"\\"+ "_" +getCurrentTime()+"\\";
 
         Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
 
@@ -45,6 +45,7 @@ public class Reporting extends Global_VARS {
         report.setAnalysisStrategy(AnalysisStrategy.TEST);
     }
 
+    /**Creates a new tab in report summary*/
     public static void createTest(String testName) {
         if(report == null) {
             init();
@@ -53,7 +54,8 @@ public class Reporting extends Global_VARS {
             currentTest = report.createTest(testName);
         }
     }
-
+    /**stepPassedWithScreenshot method takes a screenshot and pass with message.
+     * @throws	Exception*/
     public static String stepPassedWithScreenshot(String message) {
         try {
             SeleniumDriver driverInstance = SeleniumDriver.getInstance();
@@ -67,7 +69,8 @@ public class Reporting extends Global_VARS {
         report.flush();
         return message;
     }
-
+    /**testFailed method captures screenshots of failed tests.
+     * @throws	Exception*/
     public static String testFailed(String message) {
         try {
             SeleniumDriver driverInstance = SeleniumDriver.getInstance();
@@ -81,7 +84,8 @@ public class Reporting extends Global_VARS {
 
         return message;
     }
-
+    /** /**logPass method logs all step passes to 'log.txt' file.
+     * @throws	Exception*/
     public static void logPass(String pass) {
         try {
             writeToLogFile("- [PASS] " + pass);
@@ -91,6 +95,8 @@ public class Reporting extends Global_VARS {
         }
     }
 
+    /** /**logPass method logs all step passes to 'log.txt' file.
+     * @throws	Exception*/
     public static void logInfo(String info) {
         try {
             writeToLogFile("- [INFO] " + info);
@@ -100,6 +106,8 @@ public class Reporting extends Global_VARS {
         }
     }
 
+    /** /**logError method logs all step errors to 'log.txt' file.
+     * @throws	Exception*/
     public static void logError(String error) {
         try {
             writeToLogFile("- [EROR] " + error);
@@ -109,6 +117,8 @@ public class Reporting extends Global_VARS {
         }
     }
 
+    /** /**logFailure method logs all step fails to 'log.txt' file.
+     * @throws	Exception*/
     public static void logFailure(String failure) {
         try {
             writeToLogFile("- [FAIL] " + failure);
@@ -127,7 +137,7 @@ public class Reporting extends Global_VARS {
         executionTime = ft.format(date);
         return ft.format(date);
     }
-
+    //writes to log file
     private static void writeToLogFile(String logMessage) throws IOException
     {
         File file = new File(logFile);

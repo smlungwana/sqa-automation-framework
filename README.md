@@ -43,6 +43,8 @@ Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you 
     }
 ```
 
+Test data is extracted from **JSON** and **CSV** files.
+
 
 ## Bugs
 Customer value is not inserted on [User List Table](http://www.way2automation.com/angularjs-protractor/webtables/)

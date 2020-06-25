@@ -12,7 +12,7 @@ import java.io.File;
 
 import static core.Global_VARS.*;
 
-/**Selenium  Singleton class
+/**Selenium  Singleton class to ensure that there's only one SeleniumDriver instance on runtime.
  * @author smlungwana
  * */
 public class SeleniumDriver {
@@ -23,7 +23,7 @@ public class SeleniumDriver {
     //Singleton private Constructor
     private SeleniumDriver(){}
 
-    /***getInstance	method	to	retrieve active	driver instance
+    /***getInstance	method to get active driver instance
      @return SeleniumDriver*/
     public static SeleniumDriver getInstance() {
         if (instance ==  null ) {
@@ -32,6 +32,9 @@ public class SeleniumDriver {
         return instance;
     }
 
+    /**setBrowser method to switch between browsers. CHROME, FIREFOX.
+     * 	@throws	Exception
+     */
     public void setBrowser(int browser) {
         switch(browser) {
             case CHROME:
@@ -47,18 +50,23 @@ public class SeleniumDriver {
                 break;
         }
     }
-    public void setDriver(WebDriver driver) {
-        webDriver.set(driver);
-    }
 
+
+    /***getDriver method to	get Selenium driver
+     @return SeleniumDriver*/
     public WebDriver getDriver() {
         return webDriver.get();
     }
 
+    /***getCurrentDriver method to	get the active Selenium driver
+     @return SeleniumDriver*/
     public  WebDriver getCurrentDriver() {
         return getInstance().getDriver();
     }
 
+    /**takeScreenshot method to take a screenshot and append the .png file to Report results.
+     * 	@throws	Exception
+     */
     public String takeScreenshot(boolean status)
     {
         screenshotCounter++;
@@ -88,11 +96,11 @@ public class SeleniumDriver {
         }
     }
 
-    /**closeDriver method quits the current driver*/
+    /**closeDriver method quits the current driver
+     * @throws	Exception*/
     public void closeDriver() {
         try {
             getCurrentDriver().close();
-
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
