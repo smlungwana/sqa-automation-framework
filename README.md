@@ -47,7 +47,7 @@ Test data is extracted from **JSON** and **CSV** files.
 
 
 ## Bugs
-Customer value is not inserted on [User List Table](http://www.way2automation.com/angularjs-protractor/webtables/)
+Customer value is not inserted on [User List Table](http://www.way2automation.com/angularjs-protractor/webtables/) after clicking **Save**
 
 ## Author
 This project was created by [smlungwana](https://www.linkedin.com/in/smlungwana/)  
