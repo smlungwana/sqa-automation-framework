@@ -70,22 +70,25 @@ public class SeleniumDriver {
     /**takeScreenshot method to take a screenshot and append the .png file to Report results.
      * 	@throws	Exception
      */
-    public String takeScreenshot(boolean status)
-    {
+    public String takeScreenshot(boolean status) {
         screenshotCounter++;
         StringBuilder imagePathBuilder = new StringBuilder();
         StringBuilder relativePathBuilder = new StringBuilder();
+<<<<<<< HEAD
         try
         {
             imagePathBuilder.append(reportDirectory+"/");
             relativePathBuilder.append("Screenshots/");
+=======
+        try {
+            imagePathBuilder.append(reportDirectory+"\\");
+            relativePathBuilder.append("Screenshots\\");
+>>>>>>> 4a6121c605d213a71c87c83d1b5b1c70550a3560
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");
-            if (status)
-            {
+            if (status) {
                 relativePathBuilder.append("PASSED");
-            } else
-            {
+            } else {
                 relativePathBuilder.append("FAILED");
             }
             relativePathBuilder.append(".png");
@@ -93,8 +96,8 @@ public class SeleniumDriver {
             FileUtils.copyFile(screenshot, new File(imagePathBuilder.append(relativePathBuilder).toString()));
             Reporting.latestScreenshotAbs = screenshot.toString();
             return "./" + relativePathBuilder.toString();
-        } catch (Exception e)
-        {
+        }
+        catch (Exception e) {
             return null;
         }
     }
