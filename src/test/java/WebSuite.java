@@ -1,5 +1,5 @@
 import core.Global_VARS;
-import org.junit.jupiter.api.*;
+import org.testng.annotations.*;
 import testing.pages.WebTest;
 import tools.Reporting;
 import tools.SeleniumDriver;
@@ -12,26 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class WebSuite {
 
     /**Initialize Report*/
-    @BeforeAll
+    @BeforeSuite
     public static void init() {
         Reporting.reportName = "QA Assessment";
         Reporting.init();
     }
     /**Setup driver and start up browser*/
-    @BeforeEach
+    @BeforeTest
     public void setup() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
-        driver.setBrowser(Global_VARS.CHROME);
+        driver.setBrowser(Global_VARS.FIREFOX);
     }
     /**Kills the browser driver after each test*/
-    @AfterEach
+    @AfterTest
     public void shutdown() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
         driver.closeDriver();
     }
 
     /**Test case method for testing JSON test data*/
-    @Test
+    @Test(description = "JSON Test")
     public void automationAssessment_JSON_Test() {
         Global_VARS.isJSON_Test = true;
         Reporting.createTest("QA Automation Assessment -  JSON Test");
@@ -39,7 +39,7 @@ public class WebSuite {
     }
 
     /**Test case method for testing CSV test data*/
-    @Test
+    @Test(description = "CSV Test")
     public void automationAssessment_CSV_Test() {
         Global_VARS.isJSON_Test = false;
         Reporting.createTest("QA Automation Assessment -  CSV Test");

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="WebSuite" verbose="1" >
+    <test name="JSON Test" >
+        <classes>
+            <class name="WebSuite" />
+        </classes>
+    </test>
+
+    <test name="JSON Test">
+        <classes>
+            <class name="WebSuite"/>
+        </classes>
+    </test>
+</suite>

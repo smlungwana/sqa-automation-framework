@@ -7,6 +7,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.opera.OperaDriver;
 
 import java.io.File;
 
@@ -35,7 +37,7 @@ public class SeleniumDriver {
     /**setBrowser method to switch between browsers. CHROME, FIREFOX.
      * 	@throws	Exception
      */
-    public void setBrowser(int browser) {
+    public void setBrowser(String browser) {
         switch(browser) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
@@ -48,6 +50,7 @@ public class SeleniumDriver {
                 webDriver.set(new FirefoxDriver());
                 webDriver.get().manage().window().maximize();
                 break;
+
         }
     }
 
@@ -74,8 +77,8 @@ public class SeleniumDriver {
         StringBuilder relativePathBuilder = new StringBuilder();
         try
         {
-            imagePathBuilder.append(reportDirectory+"\\");
-            relativePathBuilder.append("Screenshots\\");
+            imagePathBuilder.append(reportDirectory+"/");
+            relativePathBuilder.append("Screenshots/");
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");
             if (status)
