@@ -5,6 +5,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -21,6 +22,7 @@ public class SeleniumDriver {
     private static SeleniumDriver instance;
     private	static final int IMPLICIT_TIMEOUT =	0;
     private	ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
+    private ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<>();
 
     //Singleton private Constructor
     private SeleniumDriver(){}
@@ -61,6 +63,12 @@ public class SeleniumDriver {
         return webDriver.get();
     }
 
+    /***getDriver method to	get Selenium driver
+     @return appiumDriver*/
+    public AppiumDriver getAppiumDriver() {
+        return appiumDriver.get();
+    }
+
     /***getCurrentDriver method to	get the active Selenium driver
      @return SeleniumDriver*/
     public  WebDriver getCurrentDriver() {
@@ -74,16 +82,16 @@ public class SeleniumDriver {
         screenshotCounter++;
         StringBuilder imagePathBuilder = new StringBuilder();
         StringBuilder relativePathBuilder = new StringBuilder();
-<<<<<<< HEAD
+
         try
         {
             imagePathBuilder.append(reportDirectory+"/");
             relativePathBuilder.append("Screenshots/");
-=======
-        try {
+
+
             imagePathBuilder.append(reportDirectory+"\\");
             relativePathBuilder.append("Screenshots\\");
->>>>>>> 4a6121c605d213a71c87c83d1b5b1c70550a3560
+
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");
             if (status) {
@@ -107,6 +115,15 @@ public class SeleniumDriver {
     public void closeDriver() {
         try {
             getCurrentDriver().close();
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void closeAppiumDriver() {
+        try {
+            getAppiumDriver().close();
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
