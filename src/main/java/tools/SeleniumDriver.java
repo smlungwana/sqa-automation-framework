@@ -22,7 +22,7 @@ public class SeleniumDriver {
     private static SeleniumDriver instance;
     private	static final int IMPLICIT_TIMEOUT =	0;
     private	ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
-    private ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<>();
+    private ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<AppiumDriver>();
 
     //Singleton private Constructor
     private SeleniumDriver(){}
