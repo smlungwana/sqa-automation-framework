@@ -17,7 +17,8 @@ Project was created using:
 * Selenium 3.141.59
 * Maven version: 3.6.3
 * JUnit version 5.6
-* Platform OS: Windows 8.1
+* TestNG 6.11
+* Platform OS: Mac OS 10.13.6
 
 ## Setup
 The project requires Java and Maven to be installed on your machine. 
