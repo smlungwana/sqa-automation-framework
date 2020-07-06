@@ -12,26 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class WebSuite {
 
     /**Initialize Report*/
-    @BeforeSuite
+    @BeforeSuite(groups = "test-group")
     public static void init() {
         Reporting.reportName = "QA Assessment";
         Reporting.init();
     }
     /**Setup driver and start up browser*/
-    @BeforeTest
+    @BeforeTest(groups = "test-group")
     public void setup() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
         driver.setBrowser(Global_VARS.FIREFOX);
     }
     /**Kills the browser driver after each test*/
-    @AfterTest
+    @AfterTest(groups = "test-group")
     public void shutdown() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
         driver.closeDriver();
     }
 
     /**Test case method for testing JSON test data*/
-    @Test(description = "JSON Test")
+    @Test(groups = "test-group")
     public void automationAssessment_JSON_Test() {
         Global_VARS.isJSON_Test = true;
         Reporting.createTest("QA Automation Assessment -  JSON Test");
@@ -39,7 +39,7 @@ public class WebSuite {
     }
 
     /**Test case method for testing CSV test data*/
-    @Test(description = "CSV Test")
+    @Test(groups = "csv-test")
     public void automationAssessment_CSV_Test() {
         Global_VARS.isJSON_Test = false;
         Reporting.createTest("QA Automation Assessment -  CSV Test");
