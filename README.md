@@ -20,6 +20,7 @@ Project was created using:
 * TestNG 6.11
 * Platform OS: Mac OS 10.13.6
 
+
 ## Setup
 The project requires Java and Maven to be installed on your machine. 
 To run this project simply clone this git repository and open the **pom.xml** file as project.

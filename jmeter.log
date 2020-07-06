@@ -1,0 +1,124 @@
+2020-07-01 18:49:39,409 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2020-07-01 18:49:39,779 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.3/libexec/bin/user.properties
+2020-07-01 18:49:39,805 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.3/libexec/bin/system.properties
+2020-07-01 18:49:39,827 INFO o.a.j.JMeter: Copyright (c) 1998-2020 The Apache Software Foundation
+2020-07-01 18:49:39,827 INFO o.a.j.JMeter: Version 5.3
+2020-07-01 18:49:39,827 INFO o.a.j.JMeter: java.version=1.8.0_252
+2020-07-01 18:49:39,827 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: os.name=Mac OS X
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: os.arch=x86_64
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: os.version=10.13.6
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: file.encoding=US-ASCII
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: java.awt.headless=null
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: Max memory     =1073741824
+2020-07-01 18:49:39,828 INFO o.a.j.JMeter: Available Processors =4
+2020-07-01 18:49:39,904 INFO o.a.j.JMeter: Default Locale=English (EN)
+2020-07-01 18:49:39,904 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2020-07-01 18:49:39,904 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.3/libexec
+2020-07-01 18:49:39,904 INFO o.a.j.JMeter: user.dir  =/Users/mac/automation_assessment/QA_automation_assessment
+2020-07-01 18:49:39,905 INFO o.a.j.JMeter: PWD       =/Users/mac/automation_assessment/QA_automation_assessment
+2020-07-01 18:49:39,921 INFO o.a.j.JMeter: IP: 192.168.43.36 Name: Macs-MacBook-Pro.local FullName: 192.168.43.36
+2020-07-01 18:49:47,154 INFO o.a.j.JMeter: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2020-07-01 18:49:59,186 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2020-07-01 18:50:04,625 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-8a0adacff94ffa833f29ffa37d49436c-gui
+2020-07-01 18:50:12,690 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.3, jmeter-core=5.3, jmeter-ftp=5.3, jmeter-http=5.3, jmeter-jdbc=5.3, jmeter-jms=5.3, jmeter-junit=5.3, jmeter-java=5.3, jmeter-ldap=5.3, jmeter-mail=5.3, jmeter-mongodb=5.3, jmeter-native=5.3, jmeter-tcp=5.3, jmeter-components=5.3]
+2020-07-01 18:50:12,693 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]
+2020-07-01 19:12:09,060 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-07-01 19:12:09,062 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-07-01 19:12:09,063 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-07-01 19:12:09,063 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-07-01 19:12:09,063 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2020-07-01 19:12:09,063 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2020-07-01 19:12:57,085 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2020-07-01 19:12:57,085 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2020-07-01 19:12:57,085 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2020-07-01 19:12:57,086 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2020-07-01 19:12:57,631 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2020-07-01 19:13:16,843 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2020-07-01 19:13:16,845 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-07-01 19:13:16,845 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-07-01 19:13:16,847 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2020-07-01 19:13:16,848 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2020-07-01 19:13:17,532 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2020-07-01 19:13:17,817 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2020-07-01 19:13:17,818 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Thread Group.
+2020-07-01 19:13:17,818 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2020-07-01 19:13:17,820 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=10 ramp-up=20 delayedStart=false
+2020-07-01 19:13:17,828 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2020-07-01 19:13:17,839 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2020-07-01 19:13:17,840 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2020-07-01 19:13:17,880 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Macs-MacBook-Pro.local
+2020-07-01 19:13:17,907 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2020-07-01 19:13:19,825 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2020-07-01 19:13:21,426 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2020-07-01 19:13:21,426 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2020-07-01 19:13:21,825 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2020-07-01 19:13:22,736 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2020-07-01 19:13:22,736 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2020-07-01 19:13:23,825 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2020-07-01 19:13:24,371 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2020-07-01 19:13:24,371 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2020-07-01 19:13:25,822 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2020-07-01 19:13:26,074 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2020-07-01 19:13:26,075 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2020-07-01 19:13:27,827 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-6
+2020-07-01 19:13:28,675 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2020-07-01 19:13:28,675 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2020-07-01 19:13:29,824 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-7
+2020-07-01 19:13:30,456 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-6
+2020-07-01 19:13:30,456 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-6
+2020-07-01 19:13:31,823 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-8
+2020-07-01 19:13:32,296 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-7
+2020-07-01 19:13:32,296 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-7
+2020-07-01 19:13:33,826 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-9
+2020-07-01 19:13:34,229 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-8
+2020-07-01 19:13:34,229 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-8
+2020-07-01 19:13:35,826 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-10
+2020-07-01 19:13:36,661 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-9
+2020-07-01 19:13:36,661 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-9
+2020-07-01 19:13:38,528 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-10
+2020-07-01 19:13:38,528 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-10
+2020-07-01 19:13:38,529 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2020-07-01 19:13:38,532 INFO o.a.j.s.FileServer: Default base='/Users/mac/automation_assessment/QA_automation_assessment'
+2020-07-01 19:13:38,532 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2020-07-01 19:14:39,214 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2020-07-01 19:14:39,215 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-07-01 19:14:39,216 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2020-07-01 19:14:39,427 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2020-07-01 19:14:39,428 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Thread Group.
+2020-07-01 19:14:39,428 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2020-07-01 19:14:39,428 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=10 ramp-up=20 delayedStart=false
+2020-07-01 19:14:39,430 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2020-07-01 19:14:39,439 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2020-07-01 19:14:39,439 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2020-07-01 19:14:40,972 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2020-07-01 19:14:40,972 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2020-07-01 19:14:41,432 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2020-07-01 19:14:42,142 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2020-07-01 19:14:42,142 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2020-07-01 19:14:43,431 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2020-07-01 19:14:44,248 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2020-07-01 19:14:44,248 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2020-07-01 19:14:45,432 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2020-07-01 19:14:47,115 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2020-07-01 19:14:47,115 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2020-07-01 19:14:47,434 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2020-07-01 19:14:48,251 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2020-07-01 19:14:48,252 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2020-07-01 19:14:49,430 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-6
+2020-07-01 19:14:50,162 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-6
+2020-07-01 19:14:50,162 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-6
+2020-07-01 19:14:51,435 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-7
+2020-07-01 19:14:52,272 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-7
+2020-07-01 19:14:52,272 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-7
+2020-07-01 19:14:53,430 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-8
+2020-07-01 19:14:55,312 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-8
+2020-07-01 19:14:55,312 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-8
+2020-07-01 19:14:55,433 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-9
+2020-07-01 19:14:56,481 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-9
+2020-07-01 19:14:56,481 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-9
+2020-07-01 19:14:57,436 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-10
+2020-07-01 19:14:58,275 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-10
+2020-07-01 19:14:58,275 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-10
+2020-07-01 19:14:58,276 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2020-07-01 19:14:58,276 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
