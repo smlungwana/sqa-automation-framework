@@ -21,7 +21,7 @@ public class WebSuite {
     @BeforeTest(groups = "test-group")
     public void setup() {
         SeleniumDriver driver = SeleniumDriver.getInstance();
-        driver.setBrowser(Global_VARS.FIREFOX);
+        driver.setBrowser(Global_VARS.CHROME);
     }
     /**Kills the browser driver after each test*/
     @AfterTest(groups = "test-group")
