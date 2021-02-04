@@ -1,0 +1,24 @@
+
+                         --QA ASSESSMENT LOG FILE --                                                                                       
+
+04-02-2021 11-59-30      - [PASS] Navigated to http://demo-store.seleniumacademy.com/                                                                                       
+
+04-02-2021 11-59-30      - [INFO] Successfully located element By.className: welcome-msg                                                                                       
+
+04-02-2021 11-59-32      - [INFO] Successfully clicked By.xpath: //span[@class='label'][text()='Account']                                                                                       
+
+04-02-2021 11-59-32      - [INFO] Successfully located element By.linkText: Log In                                                                                       
+
+04-02-2021 11-59-34      - [INFO] Successfully clicked By.linkText: Log In                                                                                       
+
+04-02-2021 11-59-34      - [INFO] Successfully located element By.id: email                                                                                       
+
+04-02-2021 11-59-35      - [INFO] Successfully entered "simphiwe.mlungwana20@gmail.com" on By.id: email                                                                                       
+
+04-02-2021 11-59-35      - [INFO] Successfully entered "543210" on By.id: pass                                                                                       
+
+04-02-2021 11-59-38      - [INFO] Successfully clicked By.id: send2                                                                                       
+
+04-02-2021 11-59-38      - [INFO] Successfully located element By.xpath: //h1[text()='My Dashboard']                                                                                       
+
+04-02-2021 11-59-39      - [INFO] Successfully entered "Alice" on By.id: search                                                                                       

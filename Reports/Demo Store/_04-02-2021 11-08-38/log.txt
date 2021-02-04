@@ -1,0 +1,26 @@
+
+                         --QA ASSESSMENT LOG FILE --                                                                                       
+
+04-02-2021 11-08-51      - [PASS] Navigated to http://demo-store.seleniumacademy.com/                                                                                       
+
+04-02-2021 11-08-51      - [INFO] Successfully located element By.className: welcome-msg                                                                                       
+
+04-02-2021 11-08-54      - [INFO] Successfully clicked By.xpath: //span[@class='label'][text()='Account']                                                                                       
+
+04-02-2021 11-08-54      - [INFO] Successfully located element By.linkText: Log In                                                                                       
+
+04-02-2021 11-08-55      - [INFO] Successfully clicked By.linkText: Log In                                                                                       
+
+04-02-2021 11-08-56      - [INFO] Successfully located element By.id: email                                                                                       
+
+04-02-2021 11-08-56      - [INFO] Successfully entered "simphiwe.mlungwana20@gmail.com" on By.id: email                                                                                       
+
+04-02-2021 11-08-57      - [INFO] Successfully entered "543210" on By.id: pass                                                                                       
+
+04-02-2021 11-08-59      - [INFO] Successfully clicked By.id: send2                                                                                       
+
+04-02-2021 11-08-59      - [INFO] Successfully located element By.xpath: //h1[text()='My Dashboard']                                                                                       
+
+04-02-2021 11-09-00      - [INFO] Successfully entered "Alice" on By.id: search                                                                                       
+
+04-02-2021 11-09-02      - [INFO] Successfully clicked By.xpath: //button[@class='button search-button']                                                                                       

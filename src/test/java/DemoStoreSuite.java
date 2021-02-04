@@ -33,11 +33,15 @@ public class DemoStoreSuite {
 
     /**Test case method for testing JSON test data*/
     @Test(groups = "test-group")
-    public void demoStoreTest() {
-        String email = "";
-        String pass = "";
+    public void placeOrderTest() {
+        String book = "Alice";
+        String email = "smlungwana@test.com";
+        String pass = "sm12345";
+
         Reporting.createTest("Madison Island Demo Store");
         assertNull(DemoStoreWeb.login(email,pass),"Failed to login to Demo Store");
+        assertNull(DemoStoreWeb.placeOrder(book),"Failed to place an order.");
+        assertNull(DemoStoreWeb.logout(),"Failed to logout.");
     }
 
 }

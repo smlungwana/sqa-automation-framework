@@ -1,0 +1,60 @@
+
+                         --QA ASSESSMENT LOG FILE --                                                                                       
+
+05-02-2021 12-18-45      - [PASS] Navigated to http://demo-store.seleniumacademy.com/                                                                                       
+
+05-02-2021 12-18-45      - [INFO] Successfully located element By.className: welcome-msg                                                                                       
+
+05-02-2021 12-18-47      - [INFO] Successfully clicked By.xpath: //span[@class='label'][text()='Account']                                                                                       
+
+05-02-2021 12-18-47      - [INFO] Successfully located element By.linkText: Log In                                                                                       
+
+05-02-2021 12-18-48      - [INFO] Successfully clicked By.linkText: Log In                                                                                       
+
+05-02-2021 12-18-48      - [INFO] Successfully located element By.id: email                                                                                       
+
+05-02-2021 12-18-49      - [INFO] Successfully entered "smlungwana@test.com" on By.id: email                                                                                       
+
+05-02-2021 12-18-49      - [INFO] Successfully entered "sm12345" on By.id: pass                                                                                       
+
+05-02-2021 12-18-51      - [INFO] Successfully clicked By.id: send2                                                                                       
+
+05-02-2021 12-18-51      - [INFO] Successfully located element By.xpath: //h1[text()='My Dashboard']                                                                                       
+
+05-02-2021 12-18-52      - [INFO] Successfully entered "Alice" on By.id: search                                                                                       
+
+05-02-2021 12-18-54      - [INFO] Successfully clicked By.xpath: //button[@class='button search-button']                                                                                       
+
+05-02-2021 12-18-54      - [INFO] Successfully located element By.xpath: //a[@title='View Details']                                                                                       
+
+05-02-2021 12-18-59      - [INFO] Successfully clicked By.xpath: //a[@title='View Details']                                                                                       
+
+05-02-2021 12-18-59      - [INFO] Successfully located element By.xpath: (//button[@class='button btn-cart'])[2]                                                                                       
+
+05-02-2021 12-18-59      - [INFO] Successfully clicked By.id: links_21                                                                                       
+
+05-02-2021 12-19-02      - [INFO] Successfully clicked By.xpath: (//button[@class='button btn-cart'])[2]                                                                                       
+
+05-02-2021 12-19-03      - [INFO] Successfully located element By.xpath: //span[contains(text(),'was added to your shopping cart')]                                                                                       
+
+05-02-2021 12-19-06      - [INFO] Successfully clicked By.xpath: (//span[contains(text(),'Proceed to Checkout')])[1]                                                                                       
+
+05-02-2021 12-19-06      - [INFO] Successfully located element By.xpath: //h2[text()='Billing Information']                                                                                       
+
+05-02-2021 12-19-07      - [INFO] Successfully clicked By.xpath: (//span[text()='Continue'])[1]                                                                                       
+
+05-02-2021 12-19-08      - [INFO] Successfully located element By.xpath: //label[contains(text(),'Cash On Delivery')]                                                                                       
+
+05-02-2021 12-19-08      - [INFO] Successfully clicked By.xpath: (//span[text()='Continue'])[2]                                                                                       
+
+05-02-2021 12-19-10      - [INFO] Successfully located element By.xpath: //button[@title='Place Order']                                                                                       
+
+05-02-2021 12-19-10      - [INFO] Successfully clicked By.xpath: //button[@title='Place Order']                                                                                       
+
+05-02-2021 12-19-15      - [INFO] Successfully located element By.xpath: //h2[text()='Thank you for your purchase!']                                                                                       
+
+05-02-2021 12-19-15      - [INFO] Successfully clicked By.xpath: //span[@class='label'][text()='Account']                                                                                       
+
+05-02-2021 12-19-15      - [INFO] Successfully located element By.linkText: Log Out                                                                                       
+
+05-02-2021 12-19-17      - [INFO] Successfully clicked By.linkText: Log Out                                                                                       
