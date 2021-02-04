@@ -15,6 +15,7 @@ Project was created using:
 * Java version: 11
 * IntelliJ IDEA 2019.3
 * Selenium 3.141.59
+* Appium 1.17
 * Maven version: 3.6.3
 * JUnit version 5.6
 * TestNG 6.11
