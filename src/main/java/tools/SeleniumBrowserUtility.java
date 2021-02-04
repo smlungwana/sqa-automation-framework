@@ -60,7 +60,7 @@ public class SeleniumBrowserUtility {
     public static boolean waitFor(By selector) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
-            WebDriverWait exists = new WebDriverWait(driver, 5);
+            WebDriverWait exists = new WebDriverWait(driver, 10);
 
             exists.until(ExpectedConditions.refreshed(
                     ExpectedConditions.visibilityOfElementLocated(selector)));
