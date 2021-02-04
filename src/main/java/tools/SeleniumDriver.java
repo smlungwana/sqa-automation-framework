@@ -85,9 +85,6 @@ public class SeleniumDriver {
 
         try
         {
-            imagePathBuilder.append(reportDirectory+"/");
-            relativePathBuilder.append("Screenshots/");
-
 
             imagePathBuilder.append(reportDirectory+"\\");
             relativePathBuilder.append("Screenshots\\");
@@ -115,6 +112,7 @@ public class SeleniumDriver {
     public void closeDriver() {
         try {
             getCurrentDriver().close();
+            getCurrentDriver().quit();
         }
         catch(Exception e) {
             System.out.println(e.getMessage());

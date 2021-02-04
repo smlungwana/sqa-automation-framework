@@ -29,9 +29,10 @@ public class Reporting extends Global_VARS {
     public static void init() {
         report = new ExtentReports();
 
-        Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
+        //Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
 
-        reportDirectory = reportDirectoryPath.toString();
+        reportDirectory = reportDirectory +"\\"+reportName+"\\"+"_"+getCurrentTime();
+        //reportDirectoryPath.toString();
 
         new File(reportDirectory).mkdirs();
 

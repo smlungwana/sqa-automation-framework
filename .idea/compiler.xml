@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Automation Assessment" />
         <module name="QA_automation_assessment" />
+        <module name="Automation_Assessment" />
       </profile>
     </annotationProcessing>
   </component>
