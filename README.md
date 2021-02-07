@@ -9,7 +9,7 @@
 
 
 ## General info
-This Selenium Web automation project navigates to [MADISON ISLAND](http://demo-store.seleniumacademy.com/) and performs user operations.
+This Selenium Web automation project navigates to the [MADISON ISLAND](http://demo-store.seleniumacademy.com/) demo web application and performs user operations.
 
 ## Technologies
 Project was created using:
