@@ -85,9 +85,15 @@ public class SeleniumDriver {
 
         try
         {
-
-            imagePathBuilder.append(reportDirectory+"\\");
-            relativePathBuilder.append("Screenshots\\");
+            if(operatingSystem.toLowerCase().contains("win")) { //Windows Machine
+                imagePathBuilder.append(reportDirectory+"\\");
+                relativePathBuilder.append("Screenshots\\");
+            }
+            else if(operatingSystem.toLowerCase().contains("mac") ||
+                    operatingSystem.toLowerCase().contains("linux")) { //Unix Machine
+                imagePathBuilder.append(reportDirectory+"/");
+                relativePathBuilder.append("Screenshots/");
+            }
 
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");

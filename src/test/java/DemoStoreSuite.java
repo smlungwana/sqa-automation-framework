@@ -3,12 +3,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import testing.pages.DemoStoreWeb;
-import testing.pages.WebTest;
 import tools.Reporting;
 import tools.SeleniumDriver;
-
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class DemoStoreSuite {
 
@@ -35,13 +33,13 @@ public class DemoStoreSuite {
     @Test(groups = "test-group")
     public void placeOrderTest() {
         String book = "Alice";
-        String email = "smlungwana@test.com";
-        String pass = "sm12345";
+        String email = Global_VARS.DEMO_STORE_EMAIL;
+        String pass = Global_VARS.DEMO_STORE_PASSWORD;
 
-        Reporting.createTest("Madison Island Demo Store");
-        assertNull(DemoStoreWeb.login(email,pass),"Failed to login to Demo Store");
-        assertNull(DemoStoreWeb.placeOrder(book),"Failed to place an order.");
-        assertNull(DemoStoreWeb.logout(),"Failed to logout.");
+        Reporting.createTest("Madison Island - Place Order");
+        Assert.assertNull(DemoStoreWeb.login(email,pass),"Failed to login to Demo Store");
+        Assert.assertNull(DemoStoreWeb.placeOrder(book),"Failed to place an order.");
+        Assert.assertNull(DemoStoreWeb.logout(),"Failed to logout.");
     }
 
 }

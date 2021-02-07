@@ -6,9 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Automation Assessment" />
-        <module name="QA_automation_assessment" />
-        <module name="Automation_Assessment" />
+        <module name="Automation Framework" />
       </profile>
     </annotationProcessing>
   </component>

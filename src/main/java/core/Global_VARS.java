@@ -8,10 +8,12 @@ import tools.SeleniumBrowserUtility;
  */
 public class Global_VARS {
 
+    public static String operatingSystem = System.getProperty("os.name");
+
     public static SeleniumBrowserUtility seleniumBrowser;
     public static final String MADISON_ISLAND_STORE_URL = "http://demo-store.seleniumacademy.com/";
-    public static final String DEMO_STORE_USERNAME = "";
-    public static final String DEMO_STORE_PASSWORD = "";
+    public static final String DEMO_STORE_EMAIL = "smlungwana@test.com";
+    public static final String DEMO_STORE_PASSWORD = "sm12345";
     public static final String URL = "http://www.way2automation.com/angularjs-protractor/webtables/";
     public static final String CHROME = "chrome";
     public static final String FIREFOX = "firefox";

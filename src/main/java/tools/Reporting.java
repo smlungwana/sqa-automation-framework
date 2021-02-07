@@ -31,7 +31,16 @@ public class Reporting extends Global_VARS {
 
         //Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
 
-        reportDirectory = reportDirectory +"\\"+reportName+"\\"+"_"+getCurrentTime();
+        if(operatingSystem.toLowerCase().contains("win")) { //Windows Machine
+            reportDirectory = reportDirectory +"\\"+reportName+"\\"+"_"+getCurrentTime();
+            System.out.println("Windows");
+        }
+        else if(operatingSystem.toLowerCase().contains("mac") ||
+                operatingSystem.toLowerCase().contains("linux")) { //Unix Machine
+            reportDirectory = reportDirectory +"/"+reportName+"/"+"_"+getCurrentTime();
+
+        }
+
         //reportDirectoryPath.toString();
 
         new File(reportDirectory).mkdirs();
@@ -146,7 +155,7 @@ public class Reporting extends Global_VARS {
         if (!file.exists()) {
             file.createNewFile();
             PrintWriter writer = new PrintWriter(new FileWriter(file, true));
-            writer.println(String.format(formatStr, "", "--QA ASSESSMENT LOG FILE --", "", ""));
+            writer.println(String.format(formatStr, "", "--SQA AUTOMATION LOG FILE --", "", ""));
             writer.close();
         }
         // Writes info to the text file
