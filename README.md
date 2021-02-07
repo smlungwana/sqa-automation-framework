@@ -4,6 +4,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Examples](#examples)
+* [References](#references)
 * [Author](#author)
 
 
@@ -68,6 +69,9 @@ public void setup() {
 ```
 
 Test data is extracted from **JSON** and **CSV** files.
+
+## References
+* https://maven.apache.org/surefire/maven-surefire-plugin
 
 ## Author
 This project was created with ❤ by [smlungwana](https://www.linkedin.com/in/smlungwana/)  
