@@ -13,7 +13,7 @@ This Selenium Web automation project navigates to [MADISON ISLAND](http://demo-s
 ## Technologies
 Project was created using:
 * Java version: 11
-* IntelliJ IDEA 2019.3
+* IntelliJ IDEA 2020.3
 * Selenium 3.141.59
 * Appium 1.17
 * Maven version: 3.6.3
