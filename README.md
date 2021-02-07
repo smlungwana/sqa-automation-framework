@@ -8,7 +8,7 @@
 
 
 ## General info
-This Selenium Web automation project navigates to [MADISON ISLAND](http://demo-store.seleniumacademy.com/) demo store to buy a product.
+This Selenium Web automation project navigates to [MADISON ISLAND](http://demo-store.seleniumacademy.com/) to perform user operations.
 
 ## Technologies
 Project was created using:
@@ -23,8 +23,16 @@ Project was created using:
 
 
 ## Setup
-The project requires Java and Maven to be installed on your machine. 
-To run this project simply clone this git repository and open the **pom.xml** file as project.
+The project requires Java JDK and Maven to be correctly installed on the system.
+The application is configured with maven plugin for unit tests. 
+
+### Unit Tests
+The `maven-surefire` plugin is installed and designed to run unit tests.
+To run the application unit tests from the directory with the POM file, type the following command:
+
+```shell
+mvn clean test
+```
 
 ## Examples
 
@@ -32,7 +40,7 @@ To run this project simply clone this git repository and open the **pom.xml** fi
 >>Log in to the demo website and place an order.
 
 
-The following is the sequence of steps that the test case perfoms:
+The following is the sequence of steps that the test case performs:
 1. Log into the [MADISON ISLAND](http://demo-store.seleniumacademy.com/) demo website.
 2. Search for a Book.
 3. Add a book to **Cart**
@@ -41,7 +49,7 @@ The following is the sequence of steps that the test case perfoms:
 6. Place Order.
 7. Logout.
 
-Run the **DemoStoreSuite.java** file
+**DemoStoreSuite.java** file
 ```java 
  @Test
  public void placeOrderTest() {
@@ -62,4 +70,4 @@ public void setup() {
 Test data is extracted from **JSON** and **CSV** files.
 
 ## Author
-This project was created by [smlungwana](https://www.linkedin.com/in/smlungwana/)  
+This project was created with ❤ by [smlungwana](https://www.linkedin.com/in/smlungwana/)  
