@@ -24,7 +24,7 @@ Project was created using:
 
 
 ## Setup
-The project requires Java JDK and Maven to be correctly installed on the system.
+The project requires Java JDK 8+ and Maven to be correctly installed on the system.
 The application is configured with maven plugin for unit tests. 
 
 ### Unit Tests
@@ -50,21 +50,15 @@ The following is the sequence of steps that the test case performs:
 6. Place Order.
 7. Logout.
 
-**DemoStoreSuite.java** file
-```java 
- @Test
- public void placeOrderTest() {
-    String book = "Alice"; 
-}
-```
-
 Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you can simply switch browsers before runtime by changing the Global variable.
 
-```java
-@BeforeEach
-public void setup() {
+**DemoStoreSuite.java** file
+
+```java 
+ @BeforeEach
+ public void setup() {
     SeleniumDriver driver = SeleniumDriver.getInstance();
-    driver.setBrowser(Global_VARS.CHROME); //Global_VARS.FIREFOX
+    driver.setBrowser(Global_VARS.CHROME); //Global_VARS.FIREFOX 
 }
 ```
 
