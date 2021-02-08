@@ -34,17 +34,18 @@ public class SeleniumBrowserUtility {
         }
     }
 
+
     /**waitFor method to wait for element to be visible. Takes an integer as timeout.
      * 	@throws	Exception
      */
-    public static boolean waitFor(By selector,int timeout) {
+    public static boolean waitFor(WebElement element,int timeout) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
             WebDriverWait exists = new WebDriverWait(driver, timeout);
 
             exists.until(ExpectedConditions.refreshed(
-                    ExpectedConditions.visibilityOfElementLocated(selector)));
-            Reporting.logInfo("Successfully located element "+selector.toString());
+                    ExpectedConditions.visibilityOf(element)));
+            Reporting.logInfo("Successfully located element "+element.toString());
             return true;
         }
         catch(Exception e) {
@@ -57,14 +58,14 @@ public class SeleniumBrowserUtility {
     /**waitFor method to wait for element to be visible.
      * 	@throws	Exception
      */
-    public static boolean waitFor(By selector) {
+    public static boolean waitFor(WebElement element) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
             WebDriverWait exists = new WebDriverWait(driver, 10);
 
             exists.until(ExpectedConditions.refreshed(
-                    ExpectedConditions.visibilityOfElementLocated(selector)));
-            Reporting.logInfo("Successfully located element "+selector.toString());
+                    ExpectedConditions.visibilityOf(element)));
+            Reporting.logInfo("Successfully located element "+element.toString());
             return true;
         }
         catch(Exception e) {
@@ -73,17 +74,16 @@ public class SeleniumBrowserUtility {
             return false;
         }
     }
+
     /**enterText method to enter text on text input field.
      * 	@throws	Exception
      */
-    public static boolean enterText(String text, By selector) {
+    public static boolean enterText(WebElement element,String text) {
         try {
-            WebDriver driver = SeleniumDriver.getInstance().getDriver();
-            WebElement element = driver.findElement(selector);
 
             element.sendKeys(text);
 
-            Reporting.logInfo("Successfully entered \""+text+"\" on "+selector.toString());
+            Reporting.logInfo("Successfully entered \""+text+"\" on "+element.toString());
             return true;
         }
         catch (Exception e) {
@@ -96,13 +96,13 @@ public class SeleniumBrowserUtility {
     /**waitForClickable	method to wait for element to be clickable.
      * 	@throws	Exception
      */
-    public static boolean waitForClickable(By selector, int timeout) {
+    public static boolean waitForClickable(WebElement element, int timeout) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
             WebDriverWait exists = new WebDriverWait(driver, timeout);
             exists.until(ExpectedConditions.refreshed(
-                    ExpectedConditions.elementToBeClickable(selector)));
-            Reporting.logInfo("Element "+selector+" is clickable.");
+                    ExpectedConditions.elementToBeClickable(element)));
+            Reporting.logInfo("Element "+element+" is clickable.");
             return true;
         }
         catch(Exception e) {
@@ -115,14 +115,13 @@ public class SeleniumBrowserUtility {
     /**click method to click an element e.g 'button'.
      * 	@throws	Exception
      */
-    public static boolean click(By selector) {
+    public static boolean click(WebElement element) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
-            WebElement element = driver.findElement(selector);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();",element);
-            Reporting.logInfo("Successfully clicked "+selector.toString());
+            Reporting.logInfo("Successfully clicked "+element.toString());
 
             return true;
         }
@@ -136,13 +135,13 @@ public class SeleniumBrowserUtility {
     /**selectByText method to select value from dropdown.
      * 	@throws	Exception
      */
-    public static boolean selectByText(By selector, String value) {
+    public static boolean selectByText(WebElement element, String value) {
         try {
             WebDriver driver = SeleniumDriver.getInstance().getDriver();
-            Select selectElement = new Select(driver.findElement(selector));
+            Select selectElement = new Select(element);
             selectElement.selectByVisibleText(value);
 
-            Reporting.logInfo("Successfully selected \""+value+"\" on "+selector.toString());
+            Reporting.logInfo("Successfully selected \""+value+"\" on "+element.toString());
 
             return true;
         }

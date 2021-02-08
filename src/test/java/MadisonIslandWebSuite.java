@@ -4,11 +4,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import testing.pages.DemoStoreWeb;
+import testing.pages.MadisonIslandWebTest;
 import tools.Reporting;
 import tools.SeleniumDriver;
 
-public class DemoStoreSuite {
+public class MadisonIslandWebSuite {
 
     /**Initialize Report*/
     @BeforeSuite(groups = "test-group")
@@ -37,9 +37,9 @@ public class DemoStoreSuite {
         String pass = Global_VARS.DEMO_STORE_PASSWORD;
 
         Reporting.createTest("Madison Island - Place Order");
-        Assert.assertNull(DemoStoreWeb.login(email,pass),"Failed to login to Demo Store");
-        Assert.assertNull(DemoStoreWeb.placeOrder(book),"Failed to place an order.");
-        Assert.assertNull(DemoStoreWeb.logout(),"Failed to logout.");
+        Assert.assertNull(MadisonIslandWebTest.login(email,pass),"Failed to login to Demo Store");
+        Assert.assertNull(MadisonIslandWebTest.placeOrder(book),"Failed to place an order.");
+        Assert.assertNull(MadisonIslandWebTest.logout(),"Failed to logout.");
     }
 
 }

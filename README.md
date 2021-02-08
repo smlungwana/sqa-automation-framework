@@ -52,7 +52,7 @@ The following is the sequence of steps that the test case performs:
 
 Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you can simply switch browsers before runtime by changing the Global variable.
 
-**DemoStoreSuite.java** file
+**MadisonIslandWebSuite.java** file
 
 ```java 
  @BeforeEach

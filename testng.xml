@@ -9,7 +9,7 @@
             </run>
         </groups>
         <classes>
-            <class name="DemoStoreSuite" />
+            <class name="MadisonIslandWebSuite" />
         </classes>
     </test>
 </suite>
