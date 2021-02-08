@@ -33,7 +33,6 @@ public class Reporting extends Global_VARS {
 
         if(operatingSystem.toLowerCase().contains("win")) { //Windows Machine
             reportDirectory = reportDirectory +"\\"+reportName+"\\"+"_"+getCurrentTime();
-            System.out.println("Windows");
         }
         else if(operatingSystem.toLowerCase().contains("mac") ||
                 operatingSystem.toLowerCase().contains("linux")) { //Unix Machine

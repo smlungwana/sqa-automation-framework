@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import tools.Reporting;
 import tools.SeleniumDriver;
 
+/**
+ * @author smlungwana
+ * */
 public class MadisonIslandWebTest extends Global_VARS {
 
     private static WebDriver driver = SeleniumDriver.getInstance().getDriver();
@@ -20,7 +23,7 @@ public class MadisonIslandWebTest extends Global_VARS {
             return Reporting.testFailed("Failed to navigate to Demo Store URL.");
         }
 
-        if(!seleniumBrowser.waitFor(pageObject.welcomeHeading))  {
+        if(!seleniumBrowser.waitFor(pageObject.welcomeMessage))  {
             return Reporting.testFailed("Failed to wait for 'Welcome' header.");
         }
 
@@ -56,7 +59,7 @@ public class MadisonIslandWebTest extends Global_VARS {
             return Reporting.testFailed("Failed to click 'Log in' button.");
         }
 
-        return null;
+        return SUCCESS;
     }
 
     public static String placeOrder(String order) {
@@ -141,7 +144,7 @@ public class MadisonIslandWebTest extends Global_VARS {
 
         Reporting.stepPassedWithScreenshot("Successfully placed Order number #."); //TODO extract order number
 
-        return null;
+        return SUCCESS;
     }
 
     public static String logout() {
@@ -164,6 +167,6 @@ public class MadisonIslandWebTest extends Global_VARS {
 
         Reporting.stepPassedWithScreenshot("Successfully logged out.");
 
-        return null;
+        return SUCCESS;
     }
 }

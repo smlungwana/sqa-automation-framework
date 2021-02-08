@@ -4,10 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
+/**
+ * @author smlungwana
+ * */
 public class MadisonIslandPageObject {
 
     @FindBy(className = "welcome-msg")
-    WebElement welcomeHeading;
+    WebElement welcomeMessage;
 
     @FindBy(xpath = "//span[@class='label'][text()='Account']")
     WebElement accountLink;

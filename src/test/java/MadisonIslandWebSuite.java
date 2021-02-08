@@ -8,6 +8,9 @@ import testing.pages.MadisonIslandWebTest;
 import tools.Reporting;
 import tools.SeleniumDriver;
 
+/**
+ * @author smlungwana
+ * */
 public class MadisonIslandWebSuite {
 
     /**Initialize Report*/
@@ -37,9 +40,10 @@ public class MadisonIslandWebSuite {
         String pass = Global_VARS.DEMO_STORE_PASSWORD;
 
         Reporting.createTest("Madison Island - Place Order");
-        Assert.assertNull(MadisonIslandWebTest.login(email,pass),"Failed to login to Demo Store");
-        Assert.assertNull(MadisonIslandWebTest.placeOrder(book),"Failed to place an order.");
-        Assert.assertNull(MadisonIslandWebTest.logout(),"Failed to logout.");
+        Assert.assertEquals(MadisonIslandWebTest.login(email,pass),Global_VARS.SUCCESS,"Failed to login to Madison Island");
+        Assert.assertEquals(MadisonIslandWebTest.placeOrder(book),Global_VARS.SUCCESS,"Failed to place an order.");
+        Assert.assertEquals(MadisonIslandWebTest.logout(),Global_VARS.SUCCESS,"Failed to logout.");
+
     }
 
 }
