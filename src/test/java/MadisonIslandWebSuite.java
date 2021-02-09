@@ -1,8 +1,5 @@
 import core.Global_VARS;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.Assert;
 import testing.pages.MadisonIslandWebTest;
 import tools.Reporting;
@@ -11,6 +8,8 @@ import tools.SeleniumDriver;
 /**
  * @author smlungwana
  * */
+
+@Listeners(TestNGConsoleReporting.class)
 public class MadisonIslandWebSuite {
 
     /**Initialize Report*/

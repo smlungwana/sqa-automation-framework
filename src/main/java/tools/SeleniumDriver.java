@@ -15,7 +15,8 @@ import java.io.File;
 
 import static core.Global_VARS.*;
 
-/**Selenium  Singleton class to ensure that there's only one SeleniumDriver instance on runtime.
+/**Singleton design pattern
+ * Selenium  Singleton class to ensure that there's only one WebDriver instance on runtime.
  * @author smlungwana
  * */
 public class SeleniumDriver {

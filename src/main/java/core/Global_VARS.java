@@ -27,6 +27,9 @@ public class Global_VARS {
     public static int screenshotCounter;
     public static String executionTime = "";
 
+    //TestNG Reporting
+    public static String testNGLogFile = "";
+
     public static final String SUCCESS = "success";
 
 }

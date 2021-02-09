@@ -46,7 +46,11 @@ public class Reporting extends Global_VARS {
 
         Path logPath = Paths.get(reportDirectory,"log.txt");
 
+        Path testNGLogPath = Paths.get(reportDirectory,"testng.txt");
+
         logFile = logPath.toString();
+
+       testNGLogFile = testNGLogPath.toString();
 
         Path path = Paths.get(reportDirectory,"ExtentReport.html");
         ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(path.toString());
@@ -93,6 +97,17 @@ public class Reporting extends Global_VARS {
 
         return message;
     }
+    /** /**logTestNG method that logs TestNG listener to 'logTestNG.txt' file.
+     **/
+    public static void logTestNG(String text) {
+        try {
+            writeToTestNGLogFile(text);
+        }
+        catch(IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     /** /**logPass method logs all step passes to 'log.txt' file.
      * @throws	Exception*/
     public static void logPass(String pass) {
@@ -155,6 +170,7 @@ public class Reporting extends Global_VARS {
             file.createNewFile();
             PrintWriter writer = new PrintWriter(new FileWriter(file, true));
             writer.println(String.format(formatStr, "", "--SQA AUTOMATION LOG FILE --", "", ""));
+            writer.flush(); //empty data stream
             writer.close();
         }
         // Writes info to the text file
@@ -162,10 +178,30 @@ public class Reporting extends Global_VARS {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh-mm-ss");
             PrintWriter writer = new PrintWriter(new FileWriter(file, true));
             writer.println(String.format(formatStr, dateFormat.format(new Date()), logMessage, "", ""));
+            writer.flush();
             writer.close();
         } catch (IOException e) {
             System.out.printf(e.getMessage());
         }
+    }
+
+    //write to TestNG logfile
+    private static void writeToTestNGLogFile(String text) throws IOException{
+        File file = new File(testNGLogFile);
+
+        if (!file.exists()) {
+            file.createNewFile();
+            PrintWriter writer = new PrintWriter(new FileWriter(file, true));
+            writer.println(text);
+            writer.flush();
+            writer.close();
+
+        }
+        PrintWriter writer = new PrintWriter(new FileWriter(file, true));
+        writer.println(text);
+        writer.flush();
+        writer.close();
+
     }
 
 }
