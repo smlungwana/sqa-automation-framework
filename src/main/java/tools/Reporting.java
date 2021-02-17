@@ -46,11 +46,11 @@ public class Reporting extends Global_VARS {
 
         Path logPath = Paths.get(reportDirectory,"log.txt");
 
-        Path testNGLogPath = Paths.get(reportDirectory,"testng.txt");
+       // Path testNGLogPath = Paths.get(reportDirectory,"testng.txt");
 
         logFile = logPath.toString();
 
-       testNGLogFile = testNGLogPath.toString();
+       //testNGLogFile = testNGLogPath.toString();
 
         Path path = Paths.get(reportDirectory,"ExtentReport.html");
         ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(path.toString());

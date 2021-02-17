@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -51,6 +52,25 @@ public class SeleniumDriver {
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 webDriver.set(new FirefoxDriver());
+                webDriver.get().manage().window().maximize();
+                break;
+
+            case OPERA:
+                 WebDriverManager.operadriver().setup();
+                 webDriver.set(new OperaDriver());
+                 webDriver.get().manage().window().maximize();
+                 break;
+
+            case EDGE:
+                WebDriverManager.edgedriver().setup();
+                webDriver.set(new EdgeDriver());
+                webDriver.get().manage().window().maximize();
+                break;
+
+            default:
+                System.out.println("Invalid 'browser' parameter - Setting up Chrome as default.");
+                WebDriverManager.chromedriver().setup();
+                webDriver.set(new ChromeDriver());
                 webDriver.get().manage().window().maximize();
                 break;
 

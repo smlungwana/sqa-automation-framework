@@ -17,16 +17,16 @@ public class TestNGConsoleReporting extends TestListenerAdapter {
     }
 
     public void onTestStart(ITestResult tr) {
-        if ( logFile == null ) {
-            logFile = Global_VARS.testNGLogFile;
-
-        }
-        Reporting.logTestNG("\n---------------------------------- Test '"
-                + tr.getName()
-                + getTestDescription(tr)
-                + "' ----------------------------------\n");
-        Reporting.logTestNG("START-> " + tr.getName() + "\n");
-        Reporting.logTestNG(" ***Test Parameters = " + getTestParams(tr) + "\n");
+//        if ( logFile == null ) {
+//            logFile = Global_VARS.testNGLogFile;
+//
+//        }
+//        Reporting.logTestNG("\n---------------------------------- Test '"
+//                + tr.getName()
+//                + getTestDescription(tr)
+//                + "' ----------------------------------\n");
+//        Reporting.logTestNG("START-> " + tr.getName() + "\n");
+//        Reporting.logTestNG(" ***Test Parameters = " + getTestParams(tr) + "\n");
 
         super.onTestStart(tr);
     }
@@ -38,9 +38,9 @@ public class TestNGConsoleReporting extends TestListenerAdapter {
      */
     @Override
     public void onTestSuccess(ITestResult tr) {
-        Reporting.logTestNG(" ***Result = PASSED\n");
-        Reporting.logTestNG("END -> " + tr.getName());
-        Reporting.logTestNG("\n---\n");
+//        Reporting.logTestNG(" ***Result = PASSED\n");
+//        Reporting.logTestNG("END -> " + tr.getName());
+//        Reporting.logTestNG("\n---\n");
         super.onTestSuccess(tr);
     }
 
@@ -51,9 +51,9 @@ public class TestNGConsoleReporting extends TestListenerAdapter {
      */
     @Override
     public void onFinish(ITestContext testContext) {
-        Reporting.logTestNG("\nTotal Passed = " + getPassedTests().size()
-                        + ", Total Failed = " + getFailedTests().size()
-                        + ", Total Skipped = " + getSkippedTests().size() + "\n");
+//        Reporting.logTestNG("\nTotal Passed = " + getPassedTests().size()
+//                        + ", Total Failed = " + getFailedTests().size()
+//                        + ", Total Skipped = " + getSkippedTests().size() + "\n");
 
         super.onFinish(testContext);
     }

@@ -50,15 +50,13 @@ The following is the sequence of steps that the test case performs:
 6. Place Order.
 7. Logout.
 
-Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you can simply switch browsers before runtime by changing the Global variable.
+Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you can simply configure the testng.xml file to switch browsers.
 
-**MadisonIslandWebSuite.java** file
+**testng.xml** file
 
-```java 
- @BeforeEach
- public void setup() {
-    SeleniumDriver driver = SeleniumDriver.getInstance();
-    driver.setBrowser(Global_VARS.CHROME); //Global_VARS.FIREFOX 
+```xml 
+<parameter name="browser" value="chrome"></parameter>  
+<!--parameter name="browser" value="firefox"></parameter-->
 }
 ```
 

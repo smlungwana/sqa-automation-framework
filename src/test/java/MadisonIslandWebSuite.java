@@ -19,10 +19,12 @@ public class MadisonIslandWebSuite {
         Reporting.init();
     }
     /**Setup driver and start up browser*/
+    @Parameters({"browser"})
     @BeforeTest(groups = "test-group")
-    public void setup() {
+    public void setup(@Optional(Global_VARS.DEFAULT_BROWSER) String browser) {
+
         SeleniumDriver driver = SeleniumDriver.getInstance();
-        driver.setBrowser(Global_VARS.CHROME);
+        driver.setBrowser(browser);
     }
     /**Kills the browser driver after each test*/
     @AfterTest(groups = "test-group")
@@ -42,7 +44,6 @@ public class MadisonIslandWebSuite {
         Assert.assertEquals(MadisonIslandWebTest.login(email,pass),Global_VARS.SUCCESS,"Failed to login to Madison Island");
         Assert.assertEquals(MadisonIslandWebTest.placeOrder(book),Global_VARS.SUCCESS,"Failed to place an order.");
         Assert.assertEquals(MadisonIslandWebTest.logout(),Global_VARS.SUCCESS,"Failed to logout.");
-
     }
 
 }

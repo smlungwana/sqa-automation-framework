@@ -20,7 +20,8 @@ public class Global_VARS {
     public static final String FIREFOX = "firefox";
     public static final String SAFARI = "safari";
     public static final String EDGE = "edge";
-    public static final String OPERA_MINI = "opera_mini";
+    public static final String OPERA = "opera";
+    public static final String DEFAULT_BROWSER = CHROME;
 
     //Global variables for Report
     public static String reportDirectory = System.getProperty("user.dir") + "/Reports/";
