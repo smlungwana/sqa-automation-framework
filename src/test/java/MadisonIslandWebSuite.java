@@ -15,7 +15,7 @@ public class MadisonIslandWebSuite {
     /**Initialize Report*/
     @BeforeSuite(groups = "test-group")
     public static void init() {
-        Reporting.reportName = "Demo Store";
+        Reporting.reportName = "Madison Island";
         Reporting.init();
     }
     /**Setup driver and start up browser*/
@@ -33,8 +33,8 @@ public class MadisonIslandWebSuite {
         driver.closeDriver();
     }
 
-    /**Test case method for testing JSON test data*/
-    @Test(groups = "test-group")
+    /**Place order test*/
+     @Test(groups = "test-group")
     public void placeOrderTest() {
         String book = "Alice";
         String email = Global_VARS.DEMO_STORE_EMAIL;
@@ -45,5 +45,4 @@ public class MadisonIslandWebSuite {
         Assert.assertEquals(MadisonIslandWebTest.placeOrder(book),Global_VARS.SUCCESS,"Failed to place an order.");
         Assert.assertEquals(MadisonIslandWebTest.logout(),Global_VARS.SUCCESS,"Failed to logout.");
     }
-
 }

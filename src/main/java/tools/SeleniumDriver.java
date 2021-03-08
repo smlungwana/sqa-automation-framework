@@ -25,6 +25,7 @@ public class SeleniumDriver {
     private	static final int IMPLICIT_TIMEOUT =	0;
     private	ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
     private ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<AppiumDriver>();
+    private String browser;
 
     //Singleton private Constructor
     private SeleniumDriver(){}
@@ -38,10 +39,11 @@ public class SeleniumDriver {
         return instance;
     }
 
-    /**setBrowser method to switch between browsers. CHROME, FIREFOX.
+    /**setBrowser method to switch between browsers. CHROME, FIREFOX etc.
      * 	@throws	Exception
      */
     public void setBrowser(String browser) {
+        this.browser = browser;
         switch(browser) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
@@ -68,7 +70,8 @@ public class SeleniumDriver {
                 break;
 
             default:
-                System.out.println("Invalid 'browser' parameter - Setting up Chrome as default.");
+                this.browser = CHROME;
+                System.out.println("Invalid parameter \""+browser+"\" - Setting up Chrome as default.");
                 WebDriverManager.chromedriver().setup();
                 webDriver.set(new ChromeDriver());
                 webDriver.get().manage().window().maximize();
@@ -77,6 +80,11 @@ public class SeleniumDriver {
         }
     }
 
+    /***getBrowser method to get current browser
+     @return browser*/
+    public String getBrowser() {
+        return browser;
+    }
 
     /***getDriver method to	get Selenium driver
      @return SeleniumDriver*/
@@ -106,15 +114,8 @@ public class SeleniumDriver {
 
         try
         {
-            if(operatingSystem.toLowerCase().contains("win")) { //Windows Machine
-                imagePathBuilder.append(reportDirectory+"\\");
-                relativePathBuilder.append("Screenshots\\");
-            }
-            else if(operatingSystem.toLowerCase().contains("mac") ||
-                    operatingSystem.toLowerCase().contains("linux")) { //Unix Machine
-                imagePathBuilder.append(reportDirectory+"/");
-                relativePathBuilder.append("Screenshots/");
-            }
+            imagePathBuilder.append(reportDirectory+"/");
+            relativePathBuilder.append("Screenshots/");
 
             new File(imagePathBuilder.toString() + (relativePathBuilder).toString()).mkdirs();
             relativePathBuilder.append(screenshotCounter + "_");
@@ -127,7 +128,8 @@ public class SeleniumDriver {
             File screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(screenshot, new File(imagePathBuilder.append(relativePathBuilder).toString()));
             Reporting.latestScreenshotAbs = screenshot.toString();
-            return "./" + relativePathBuilder.toString();
+
+            return imagePathBuilder.toString();
         }
         catch (Exception e) {
             return null;

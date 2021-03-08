@@ -2,6 +2,9 @@ package core;
 
 import tools.SeleniumBrowserUtility;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  @author smlungwana
  Utility class Global variables
@@ -24,7 +27,9 @@ public class Global_VARS {
     public static final String DEFAULT_BROWSER = CHROME;
 
     //Global variables for Report
-    public static String reportDirectory = System.getProperty("user.dir") + "/Reports/";
+    public static String userDir = System.getProperty("user.dir");
+    public static String reportDirectory =  Paths.get(userDir,"test-output").toString();
+    public static String reportConfigFile = Paths.get(userDir,"extent-config.xml").toString();
     public static int screenshotCounter;
     public static String executionTime = "";
 

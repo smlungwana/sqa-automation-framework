@@ -4,6 +4,7 @@ import com.aventstack.extentreports.AnalysisStrategy;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.model.Test;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import core.Global_VARS;
@@ -29,18 +30,9 @@ public class Reporting extends Global_VARS {
     public static void init() {
         report = new ExtentReports();
 
-        //Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
+        Path reportDirectoryPath = Paths.get( reportDirectory,reportName,"_"+getCurrentTime());
 
-        if(operatingSystem.toLowerCase().contains("win")) { //Windows Machine
-            reportDirectory = reportDirectory +"\\"+reportName+"\\"+"_"+getCurrentTime();
-        }
-        else if(operatingSystem.toLowerCase().contains("mac") ||
-                operatingSystem.toLowerCase().contains("linux")) { //Unix Machine
-            reportDirectory = reportDirectory +"/"+reportName+"/"+"_"+getCurrentTime();
-
-        }
-
-        //reportDirectoryPath.toString();
+        reportDirectory = reportDirectoryPath.toString();
 
         new File(reportDirectory).mkdirs();
 
@@ -54,6 +46,7 @@ public class Reporting extends Global_VARS {
 
         Path path = Paths.get(reportDirectory,"ExtentReport.html");
         ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(path.toString());
+        htmlReport.loadXMLConfig(reportConfigFile);
         report.attachReporter(htmlReport);
         report.setAnalysisStrategy(AnalysisStrategy.TEST);
     }
@@ -67,6 +60,20 @@ public class Reporting extends Global_VARS {
             currentTest = report.createTest(testName);
         }
     }
+    /**stepPassed method that appends the message to the html file.
+     * @throws	Exception*/
+    public static String stepPass(String message) {
+        try {
+            currentTest.pass(message);
+        }
+        catch (Exception e) {
+            logFailure(e.getMessage());
+        }
+        report.flush();
+
+        return message;
+    }
+
     /**stepPassedWithScreenshot method takes a screenshot and pass with message.
      * @throws	Exception*/
     public static String stepPassedWithScreenshot(String message) {
@@ -74,7 +81,6 @@ public class Reporting extends Global_VARS {
             SeleniumDriver driverInstance = SeleniumDriver.getInstance();
 
             currentTest.pass(message, MediaEntityBuilder.createScreenCaptureFromPath(driverInstance.takeScreenshot(true)).build());
-
         }
         catch (IOException e) {
             currentTest.pass(message);

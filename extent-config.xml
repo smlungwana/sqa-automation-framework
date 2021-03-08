@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extentreports>
+    <configuration>
+
+        <!-- report theme -->
+        <!-- Theme: standard | dark -->
+        <theme>standard</theme>
+        <!-- custom style -->
+        <styles>
+            <![CDATA[.r-img {
+                cursor: zoom-in;
+                width: 30px;
+            }]]>
+        </styles>
+    </configuration>
+</extentreports>
