@@ -16,8 +16,8 @@ public class Global_VARS {
     public static SeleniumBrowserUtility seleniumBrowser;
 
     public static final String MADISON_ISLAND_STORE_URL = "http://demo-store.seleniumacademy.com/";
-    public static final String DEMO_STORE_EMAIL = "smlungwana@test.com";
-    public static final String DEMO_STORE_PASSWORD = "sm12345";
+    public static final String DEMO_STORE_EMAIL = "smlu@test.com";
+    public static final String DEMO_STORE_PASSWORD = "123456";
 
     public static final String CHROME = "chrome";
     public static final String FIREFOX = "firefox";
