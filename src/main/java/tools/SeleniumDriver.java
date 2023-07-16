@@ -1,5 +1,7 @@
 package tools;
 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.IOSDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -9,12 +11,16 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static core.Global_VARS.*;
+import core.Global_VARS;
 
 /**Singleton design pattern
  * Selenium  Singleton class to ensure that there's only one WebDriver instance on runtime.
@@ -23,7 +29,9 @@ import static core.Global_VARS.*;
 public class SeleniumDriver {
     private static SeleniumDriver instance;
     private	static final int IMPLICIT_TIMEOUT =	0;
-    private	ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
+
+    private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+    private static ThreadLocal<AppiumDriver<MobileElement>> mobileDriver = new ThreadLocal<>();
     private ThreadLocal<AppiumDriver> appiumDriver = new ThreadLocal<AppiumDriver>();
     private String browser;
 
@@ -35,6 +43,7 @@ public class SeleniumDriver {
     public static SeleniumDriver getInstance() {
         if (instance ==  null ) {
             instance = new SeleniumDriver();
+            mobileDriver.set(startMobileDriver());
         }
         return instance;
     }
@@ -104,6 +113,15 @@ public class SeleniumDriver {
         return getInstance().getDriver();
     }
 
+    /***getMobileDriver method to	get the active Selenium mobile driver
+     @return mobileDriver*/
+    public AppiumDriver<MobileElement> getMobileDriver() {
+        if (mobileDriver.get() == null) {
+            mobileDriver.set(startMobileDriver());
+        }
+        return mobileDriver.get();
+    }
+
     /**takeScreenshot method to take a screenshot and append the .png file to Report results.
      * 	@throws	Exception
      */
@@ -155,6 +173,33 @@ public class SeleniumDriver {
         catch(Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void tearDown() {
+        if (webDriver.get() != null) {
+            webDriver.get().quit();
+            webDriver.remove();
+        }
+        if (mobileDriver.get() != null) {
+            mobileDriver.get().quit();
+            mobileDriver.remove();
+        }
+    }
+
+    private static AppiumDriver<MobileElement> startMobileDriver() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", Global_VARS.TARGET_PLATFORM);
+        capabilities.setCapability("deviceName", Global_VARS.DEVICE_NAME);
+        capabilities.setCapability("platformVersion", Global_VARS.PLATFORM_VERSION);
+        capabilities.setCapability("app", Global_VARS.APP);
+        capabilities.setCapability("automationName", Global_VARS.AUTOMATION_NAME);
+
+        try {
+            mobileDriver.set(new IOSDriver<>(new URL(Global_VARS.GRID_URL), capabilities));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return mobileDriver.get();
     }
 
 }

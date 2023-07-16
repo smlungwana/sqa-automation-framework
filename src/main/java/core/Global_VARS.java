@@ -38,4 +38,15 @@ public class Global_VARS {
 
     public static final String SUCCESS = "success";
 
+    //Global variables for Mobile Testing
+    public static String TARGET_PLATFORM = "";
+    public static String DEVICE_NAME = "";
+    public static String PLATFORM_VERSION = "";
+    public static String APP = "";
+
+    public static String AUTOMATION_NAME = "";
+
+    public static String GRID_URL = "";
+
+
 }

@@ -1,5 +1,6 @@
 package tools;
 
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -46,6 +47,23 @@ public class SeleniumBrowserUtility {
             exists.until(ExpectedConditions.refreshed(
                     ExpectedConditions.visibilityOf(element)));
             Reporting.logInfo("Successfully located element "+element.toString());
+            return true;
+        }
+        catch(Exception e) {
+            Reporting.logError(e.getMessage());
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean waitFor(String predicateString, int timeout) {
+        try {
+            WebDriver driver = SeleniumDriver.getInstance().getDriver();
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    MobileBy.iOSNsPredicateString(predicateString)));
+            Reporting.logInfo("Successfully located element with predicate string "+predicateString);
             return true;
         }
         catch(Exception e) {
